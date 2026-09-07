@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeyad Salah | AI & Machine Learning Engineer Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Zeyad Salah El Sayed Ali Elshanab — Computer Science (AI) student building practical AI, Machine Learning models, LLMs, RAG architectures, and intelligent digital systems." />
+  <meta name="keywords" content="Zeyad Salah, AI Engineer, Machine Learning, LLMs, RAG, Streamlit, Python, Computer Science, Deep Learning, Portfolio" />
+  <meta name="author" content="Zeyad Salah El Sayed Ali Elshanab" />
+  
+  <!-- Open Graph / Social Cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zeyad Salah | AI & Machine Learning Engineer Portfolio" />
+  <meta property="og:description" content="Computer Science student building practical AI, machine learning, and intelligent digital experiences." />
+  <meta property="og:image" content="assets/images/revora-preview.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  
+  <!-- Google Fonts: Space Grotesk + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Interactive Ambient Canvas Background -->
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+
+  <!-- ===================================================================
+       Header & Sticky Navigation Bar
+       =================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand" aria-label="Zeyad Salah Home">
+        <span class="brand-badge">ZS</span>
+        <div class="brand-text">
+          <span class="brand-name">Zeyad Salah</span>
+          <span class="brand-role">CS (AI) Student</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#design" class="nav-link">Design</a></li>
+          <li><a href="#github" class="nav-link">GitHub</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="nav-actions">
+        <a href="https://github.com/ZeyadSalah134" target="_blank" rel="noopener noreferrer" class="nav-social-pill" aria-label="GitHub Profile" title="GitHub: @ZeyadSalah134">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/zeyad-salah-elshanab?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="nav-social-pill" aria-label="LinkedIn Profile" title="LinkedIn: Zeyad Salah">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+        <a href="assets/docs/Zeyad_Salah_CV.pdf" download="Zeyad_Salah_CV.pdf" class="btn-nav-cv" aria-label="Download CV">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>CV</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================
+         Hero Section
+         =================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <!-- Left: Text & Pitch -->
+        <div class="hero-content">
+          <div class="hero-status-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for Internships & AI Roles</span>
+          </div>
+
+          <p class="hero-greeting">Hi, I'm Zeyad Salah</p>
+
+          <h1 class="hero-headline">
+            <span class="headline-gradient">AI/ML Engineer</span> in Progress.
+          </h1>
+
+          <p class="hero-bio">
+            Computer Science student building practical AI, machine learning, and intelligent digital experiences. Focused on applied ML pipelines, LLMs, Retrieval-Augmented Generation (RAG), and production-oriented AI systems.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Work</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="assets/docs/Zeyad_Salah_CV.pdf" download="Zeyad_Salah_CV.pdf" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Cool High-Tech Social Connection Hub -->
+          <div class="hero-social-cards">
+            <!-- GitHub Cool Card -->
+            <a href="https://github.com/ZeyadSalah134" target="_blank" rel="noopener noreferrer" class="cool-social-card github-card" aria-label="GitHub Profile: @ZeyadSalah134" title="Visit GitHub Profile">
+              <div class="social-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="social-card-text">
+                <span class="social-card-platform">GitHub</span>
+                <span class="social-card-handle">@ZeyadSalah134</span>
+              </div>
+              <span class="social-card-arrow">↗</span>
+            </a>
+
+            <!-- LinkedIn Cool Card -->
+            <a href="https://www.linkedin.com/in/zeyad-salah-elshanab?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="cool-social-card linkedin-card" aria-label="LinkedIn Profile: Zeyad Salah" title="Connect on LinkedIn">
+              <div class="social-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div class="social-card-text">
+                <span class="social-card-platform">LinkedIn</span>
+                <span class="social-card-handle">Zeyad Salah</span>
+              </div>
+              <span class="social-card-arrow">↗</span>
+            </a>
+
+            <!-- Quick Email Button -->
+            <a href="mailto:zeyadsalah134@gmail.com" class="social-icon-btn" aria-label="Email Zeyad" title="Email: zeyadsalah134@gmail.com">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Profile Visual with Floating Chips -->
+        <div class="hero-visual">
+          <div class="photo-wrapper">
+            <div class="photo-frame">
+              <img src="assets/images/zeyad-photo.jpg" alt="Zeyad Salah El Sayed Ali Elshanab" class="hero-photo" />
+            </div>
+
+            <!-- Floating Tech Chips -->
+            <div class="floating-chip chip-top">
+              <span class="chip-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </span>
+              <span>CS (AI) • Class of 2028</span>
+            </div>
+
+            <div class="floating-chip chip-bottom">
+              <span class="chip-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V15a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 11H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 16.93z"></path>
+                </svg>
+              </span>
+              <span>LLMs &amp; RAG Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         About Section & Compact Info Cards
+         =================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Profile Summary
+          </span>
+          <h2 class="section-title">About <span class="text-gradient">Zeyad Salah</span></h2>
+          <p class="section-description">
+            Passionate Computer Science student focused on Artificial Intelligence, Machine Learning, and real-world software engineering.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Narrative -->
+          <div class="about-narrative">
+            <h3 class="narrative-title">Bridging Theory with Practical AI Deployments</h3>
+            <p class="narrative-text">
+              I am a <strong>Computer Science (AI) student</strong> deeply invested in the practical applications of Machine Learning, Large Language Models (LLMs), and Retrieval-Augmented Generation (RAG).
+            </p>
+            <p class="narrative-text">
+              Rather than confining artificial intelligence to notebook prototypes, my focus centers on building reliable end-to-end pipelines: from rigorous data preprocessing and feature engineering to model comparison, serialization, and interactive web application deployment.
+            </p>
+            <p class="narrative-text">
+              Through internships at <strong>Uneeq Interns</strong> and <strong>Tips Hindawi</strong>, I have worked directly on hands-on ML applications, custom RAG architectures, prompt optimization, and business use-cases. I also bring strong foundations in object-oriented programming (C++ and Python), data structures, and human-centered product design.
+            </p>
+          </div>
+
+          <!-- Right Compact Cards Grid -->
+          <div class="about-cards-grid">
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <span class="info-card-label">Degree</span>
+                <span class="info-card-value">Computer Science — AI</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <span class="info-card-label">Expected Graduation</span>
+                <span class="info-card-value">2028</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <span class="info-card-label">Primary Focus</span>
+                <span class="info-card-value">AI / ML / LLMs / RAG</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <span class="info-card-label">Core Languages</span>
+                <span class="info-card-value">Python / C++</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <span class="info-card-label">Location</span>
+                <span class="info-card-value">Abu Dhabi, UAE &amp; Egypt</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <span class="info-card-label">Spoken Languages</span>
+                <span class="info-card-value">Arabic (Native) • English (Advanced)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Experience Section
+         =================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Career Timeline
+          </span>
+          <h2 class="section-title">Industry <span class="text-gradient">Experience</span></h2>
+          <p class="section-description">
+            Hands-on internships building machine learning pipelines, LLM-powered applications, and business solutions.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1: Uneeq Interns -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-marker-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-company">Uneeq Interns</h3>
+                  <p class="timeline-role">Machine Learning Internship</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge current">March 2026 — Present</span>
+                  <span class="timeline-location">Remote • Egypt</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Working on end-to-end, real-world Machine Learning applications and pipelines.</li>
+                <li>Exploring Large Language Models (LLMs) and applied AI-based solutions for product workflows.</li>
+                <li>Applying machine learning concepts, feature preparation, and algorithm tuning to practical business cases.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag-pill">Machine Learning</span>
+                <span class="tag-pill">Model Development</span>
+                <span class="tag-pill">LLMs</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Business Applications</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Tips Hindawi -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-marker-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-company">Tips Hindawi</h3>
+                  <p class="timeline-role">LLMs Intern</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge">December 2025 — February 2026</span>
+                  <span class="timeline-location">Remote • Egypt</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Completed intensive internship focused specifically on Large Language Models (LLMs).</li>
+                <li>Engineered and evaluated Retrieval-Augmented Generation (RAG) architectures with semantic indexing.</li>
+                <li>Built, evaluated, and stress-tested LLM-based applications for domain-specific query handling.</li>
+                <li>Applied advanced prompt engineering, context steering, and AI optimization techniques.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag-pill">Generative AI</span>
+                <span class="tag-pill">LLMs</span>
+                <span class="tag-pill">RAG</span>
+                <span class="tag-pill">Prompt Engineering</span>
+                <span class="tag-pill">AI Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Skills Section
+         =================================================================== -->
+    <section class="section" id="skills">
+      <div class="container skills-container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Technical Expertise
+          </span>
+          <h2 class="section-title">Skills &amp; <span class="text-gradient">Competencies</span></h2>
+          <p class="section-description">
+            Core technologies, AI frameworks, algorithmic foundations, and development tools.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skill-tabs">
+          <button class="skill-tab-btn active" data-filter="all">All Skills</button>
+          <button class="skill-tab-btn" data-filter="ai">AI / Machine Learning</button>
+          <button class="skill-tab-btn" data-filter="genai">Generative AI</button>
+          <button class="skill-tab-btn" data-filter="programming">Programming</button>
+          <button class="skill-tab-btn" data-filter="tools">Tools &amp; Practices</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- AI/ML Category -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">AI / ML</span>
+            </div>
+            <h3 class="skill-name">Machine Learning</h3>
+            <p class="skill-desc">Supervised and unsupervised learning, regression, classification, and ensemble modeling.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 92%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 20V10"></path>
+                  <path d="M12 20V4"></path>
+                  <path d="M6 20v-6"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">AI / ML</span>
+            </div>
+            <h3 class="skill-name">Model Development</h3>
+            <p class="skill-desc">Architecture tuning, ExtraTrees, XGBoost, Random Forest, Gradient Boosting, and neural networks.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <span class="skill-category-badge">AI / ML</span>
+            </div>
+            <h3 class="skill-name">Model Evaluation</h3>
+            <p class="skill-desc">Cross-validation, RMSE, R², F1-Score, precision-recall trade-offs, and residual analysis.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 88%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+              </div>
+              <span class="skill-category-badge">AI / ML</span>
+            </div>
+            <h3 class="skill-name">Data Preprocessing</h3>
+            <p class="skill-desc">Missing value imputation, outlier detection, scaling, normalization, and automated pipeline builders.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 94%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">AI / ML</span>
+            </div>
+            <h3 class="skill-name">Feature Engineering</h3>
+            <p class="skill-desc">Target encoding via category_encoders, interaction terms, dimension reduction, and ratio metrics.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 89%;"></div></div>
+          </div>
+
+          <!-- Generative AI Category -->
+          <div class="skill-card" data-category="genai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Generative AI</span>
+            </div>
+            <h3 class="skill-name">Large Language Models (LLMs)</h3>
+            <p class="skill-desc">Architecture comprehension, tokenization, open-source model deployment, and context window management.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="genai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Generative AI</span>
+            </div>
+            <h3 class="skill-name">RAG (Retrieval-Augmented Generation)</h3>
+            <p class="skill-desc">Semantic vector retrieval, embeddings, chunking strategies, knowledge grounding, and query expansion.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 88%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="genai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Generative AI</span>
+            </div>
+            <h3 class="skill-name">Prompt Engineering</h3>
+            <p class="skill-desc">Chain-of-thought, few-shot prompting, system steering, structured JSON formatting, and guardrailing.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 93%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="genai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Generative AI</span>
+            </div>
+            <h3 class="skill-name">AI Optimization</h3>
+            <p class="skill-desc">Latency reduction, token efficiency, temperature control, and cost-effective model routing.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 85%;"></div></div>
+          </div>
+
+          <!-- Programming Category -->
+          <div class="skill-card" data-category="programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Programming</span>
+            </div>
+            <h3 class="skill-name">Python</h3>
+            <p class="skill-desc">Primary language for data science, machine learning pipelines, automation, Streamlit, and NumPy/Pandas.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 95%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Programming</span>
+            </div>
+            <h3 class="skill-name">C++</h3>
+            <p class="skill-desc">Systems programming, memory management, pointers, and performance-critical computing.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 86%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Programming</span>
+            </div>
+            <h3 class="skill-name">OOP (Object-Oriented)</h3>
+            <p class="skill-desc">Encapsulation, inheritance, polymorphism, abstraction, and clean modular software design.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 91%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="6" y1="3" x2="6" y2="15"></line>
+                  <circle cx="18" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 9a9 9 0 0 1-9 9"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Programming</span>
+            </div>
+            <h3 class="skill-name">Data Structures &amp; Algorithms</h3>
+            <p class="skill-desc">Trees, graphs, heaps, dynamic programming, time/space complexity optimization, and problem solving.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 89%;"></div></div>
+          </div>
+
+          <!-- Tools Category -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Tools</span>
+            </div>
+            <h3 class="skill-name">Git &amp; GitHub</h3>
+            <p class="skill-desc">Branching workflows, version control, PR reviews, merge conflict resolution, and CI/CD basics.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 92%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Tools</span>
+            </div>
+            <h3 class="skill-name">Technical Documentation</h3>
+            <p class="skill-desc">Model cards, architecture schematics, API specs, reproducible READMEs, and engineering reports.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Tools</span>
+            </div>
+            <h3 class="skill-name">Agile Collaboration</h3>
+            <p class="skill-desc">Sprint cycles, standups, remote team coordination, task tracking, and iterative development.</p>
+            <div class="skill-meter"><div class="skill-meter-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Certifications Section
+         =================================================================== -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Verified Credentials
+          </span>
+          <h2 class="section-title">Industry <span class="text-gradient">Certifications</span></h2>
+          <p class="section-description">
+            Specialized training programs completed with NVIDIA Deep Learning Institute and Google.
+          </p>
+        </div>
+
+        <div class="certifications-grid">
+          <!-- NVIDIA 1 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-nvidia">NV</div>
+            <div class="cert-content">
+              <h3 class="cert-title">NVIDIA DLI Summer Training Program: Generative AI</h3>
+              <p class="cert-issuer-name">Information Technology Institute (ITI) &bull; NVIDIA</p>
+              <span class="cert-date">Sep 2025</span>
+            </div>
+          </div>
+
+          <!-- NVIDIA 2 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-nvidia">NV</div>
+            <div class="cert-content">
+              <h3 class="cert-title">Building LLM Applications With Prompt Engineering</h3>
+              <p class="cert-issuer-name">NVIDIA Deep Learning Institute</p>
+              <span class="cert-date">Oct 2025</span>
+            </div>
+          </div>
+
+          <!-- NVIDIA 3 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-nvidia">NV</div>
+            <div class="cert-content">
+              <h3 class="cert-title">AI for All: From Basics to GenAI Practice</h3>
+              <p class="cert-issuer-name">NVIDIA</p>
+              <span class="cert-date">Oct 2025</span>
+            </div>
+          </div>
+
+          <!-- Google 1 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-google">GOOG</div>
+            <div class="cert-content">
+              <h3 class="cert-title">Google AI Essentials</h3>
+              <p class="cert-issuer-name">Google</p>
+              <span class="cert-date">Sep 2025</span>
+            </div>
+          </div>
+
+          <!-- Google 2 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-google">GOOG</div>
+            <div class="cert-content">
+              <h3 class="cert-title">Introduction to AI</h3>
+              <p class="cert-issuer-name">Google</p>
+              <span class="cert-date">Aug 2025</span>
+            </div>
+          </div>
+
+          <!-- Google 3: Business & Productivity -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-google">GOOG</div>
+            <div class="cert-content">
+              <h3 class="cert-title">Use AI Responsibly</h3>
+              <p class="cert-issuer-name">Google &bull; AI for Business &amp; Productivity</p>
+              <span class="cert-date">Sep 2025</span>
+            </div>
+          </div>
+
+          <!-- Google 4 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-google">GOOG</div>
+            <div class="cert-content">
+              <h3 class="cert-title">Discover the Art of Prompting</h3>
+              <p class="cert-issuer-name">Google &bull; AI for Business &amp; Productivity</p>
+              <span class="cert-date">Sep 2025</span>
+            </div>
+          </div>
+
+          <!-- Google 5 -->
+          <div class="cert-card">
+            <div class="cert-issuer-badge cert-issuer-google">GOOG</div>
+            <div class="cert-content">
+              <h3 class="cert-title">Maximize Productivity With AI Tools</h3>
+              <p class="cert-issuer-name">Google &bull; AI for Business &amp; Productivity</p>
+              <span class="cert-date">Sep 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Core Projects Section (REVORA & ML Project)
+         =================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Featured Engineering
+          </span>
+          <h2 class="section-title">Core <span class="text-gradient">AI &amp; ML Projects</span></h2>
+          <p class="section-description">
+            End-to-end machine learning pipelines, predictive engines, and production deployments.
+          </p>
+        </div>
+
+        <div class="projects-container">
+          <!-- PROJECT 01: REVORA -->
+          <div class="featured-project-card">
+            <div class="project-hero-grid">
+              <!-- Left: Project Info -->
+              <div class="project-info-side">
+                <div>
+                  <div class="project-meta-bar">
+                    <span class="project-num">PROJECT 01</span>
+                    <span class="project-category-pill">Machine Learning / Streamlit</span>
+                  </div>
+                  <h3 class="project-title">REVORA — Car Horsepower Prediction</h3>
+                  <p class="project-desc">
+                    Car spec sheets tell you almost everything except the number many people actually want: horsepower. REVORA predicts a car's horsepower from its specifications and turns the trained ML pipeline into an interactive application.
+                  </p>
+
+                  <!-- 4 Feature Cards Grid -->
+                  <div class="feature-mini-grid">
+                    <div class="feature-mini-card">
+                      <h4>Predictor</h4>
+                      <p>Instant horsepower estimation based on displacement, trim, and transmission.</p>
+                    </div>
+                    <div class="feature-mini-card">
+                      <h4>Performance DNA</h4>
+                      <p>Visual feature importance and vehicle characteristic breakdown.</p>
+                    </div>
+                    <div class="feature-mini-card">
+                      <h4>Power Battle</h4>
+                      <p>Side-by-side comparative horsepower benchmarking across models.</p>
+                    </div>
+                    <div class="feature-mini-card">
+                      <h4>Model Insights</h4>
+                      <p>Model interpretability metrics and explainable prediction curves.</p>
+                    </div>
+                  </div>
+
+                  <!-- Visual ML Pipeline Diagram -->
+                  <div class="pipeline-wrapper">
+                    <div class="pipeline-title">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                      </svg>
+                      <span>Visual ML Pipeline Flow</span>
+                    </div>
+                    <div class="pipeline-scroll">
+                      <span class="pipeline-node highlight">~8,100 UAE Dataset</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node">Cleaning</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node">Feature Engineering</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node">Target Encoding</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node">Model Training</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node">Model Comparison</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node highlight">Joblib Pipeline</span>
+                      <span class="pipeline-arrow">&rarr;</span>
+                      <span class="pipeline-node highlight">Streamlit Cloud</span>
+                    </div>
+                  </div>
+
+                  <!-- Tech Stack Pills -->
+                  <div class="project-tech-stack">
+                    <span class="tag-pill">Python</span>
+                    <span class="tag-pill">ExtraTrees</span>
+                    <span class="tag-pill">XGBoost</span>
+                    <span class="tag-pill">Random Forest</span>
+                    <span class="tag-pill">Gradient Boosting</span>
+                    <span class="tag-pill">category_encoders</span>
+                    <span class="tag-pill">Joblib</span>
+                    <span class="tag-pill">Streamlit</span>
+                  </div>
+                </div>
+
+                <!-- Action Links -->
+                <div class="project-actions">
+                  <a href="https://lnkd.in/epcD4Auh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>GitHub ↗</span>
+                  </a>
+
+                  <a href="https://lnkd.in/ec7Tamv6" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>Live Demo ↗</span>
+                  </a>
+
+                  <button type="button" class="btn btn-outline btn-sm" data-modal-target="revora">
+                    <span>View Case Study</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right: Project Preview Image -->
+              <div class="project-preview-side">
+                <a href="https://lnkd.in/ec7Tamv6" target="_blank" rel="noopener noreferrer" class="project-image-link" aria-label="Open REVORA Live Demo">
+                  <img src="assets/images/revora-preview.jpg" alt="REVORA Car Horsepower Prediction AI Dashboard" class="project-img" loading="lazy" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 02: ML PROJECT (Video Showcase) -->
+          <div class="featured-project-card">
+            <div class="project-hero-grid reverse">
+              <!-- Left: Project Info -->
+              <div class="project-info-side">
+                <div>
+                  <div class="project-meta-bar">
+                    <span class="project-num">PROJECT 02</span>
+                    <span class="project-category-pill">Machine Learning / Model Evaluation</span>
+                  </div>
+                  <h3 class="project-title">AI &amp; Machine Learning Engineering Showcase</h3>
+                  <p class="project-desc">
+                    Comprehensive machine learning project highlighting end-to-end model exploration, structured preprocessing pipelines, hyperparameter tuning, performance evaluation metrics, and practical system validation.
+                  </p>
+
+                  <div class="feature-mini-grid">
+                    <div class="feature-mini-card">
+                      <h4>Model Architecture</h4>
+                      <p>Trained neural network and machine learning models evaluated on test distributions.</p>
+                    </div>
+                    <div class="feature-mini-card">
+                      <h4>Demonstration Video</h4>
+                      <p>Complete project walkthrough video recording covering pipeline execution.</p>
+                    </div>
+                  </div>
+
+                  <!-- Audio Player Application highlight from CV -->
+                  <div style="margin-top: 1rem; margin-bottom: 1.25rem; padding: 0.85rem 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: var(--radius-sm);">
+                    <h4 style="font-family: var(--font-heading); font-size: 0.9rem; color: var(--accent-cyan); margin-bottom: 0.25rem;">
+                      Additional Systems Project: Audio Player Application (C++ / OOP)
+                    </h4>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
+                      Developed a functional audio player using data structures concepts and object-oriented programming principles in C++, focusing on performance optimization and clean architecture.
+                    </p>
+                  </div>
+
+                  <div class="project-tech-stack">
+                    <span class="tag-pill">Machine Learning</span>
+                    <span class="tag-pill">Python</span>
+                    <span class="tag-pill">C++</span>
+                    <span class="tag-pill">OOP</span>
+                    <span class="tag-pill">Data Structures</span>
+                    <span class="tag-pill">Model Evaluation</span>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://drive.google.com/file/d/13XEQDt8zYrCe6eYPGEyt8-kMCT9HHYmN/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <span>Watch Video Demo ↗</span>
+                  </a>
+
+                  <button type="button" class="btn btn-outline btn-sm" data-modal-target="mlproject">
+                    <span>Project Details</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right: Video Preview Area with Play Button -->
+              <div class="project-preview-side">
+                <a href="https://drive.google.com/file/d/13XEQDt8zYrCe6eYPGEyt8-kMCT9HHYmN/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="project-image-link" aria-label="Watch Project Demo Video">
+                  <img src="assets/images/ml-preview.jpg" alt="Machine Learning Project Video Preview" class="project-img" loading="lazy" />
+                  <div class="video-overlay-btn" aria-label="Play Video">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         UI/UX & Product Design Section (EGYTECH, SAVORÉ, SHOPLY)
+         =================================================================== -->
+    <section class="section" id="design">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Interface &amp; Product Design
+          </span>
+          <h2 class="section-title">UI/UX &amp; <span class="text-gradient">Product Design</span></h2>
+          <p class="section-description">
+            Mobile interfaces following Apple Human Interface Guidelines, interactive Figma prototypes, and seamless user journeys.
+          </p>
+        </div>
+
+        <div class="design-grid">
+          <!-- PROJECT 03: EGYTECH -->
+          <div class="design-card">
+            <div class="design-card-media">
+              <img src="assets/images/egytech-preview.jpg" alt="EgyTech iOS UI/UX Design Challenge" class="design-card-img" loading="lazy" />
+            </div>
+            <div class="design-card-body">
+              <div class="design-meta">
+                <span class="project-num">PROJECT 03</span>
+                <span class="project-category-pill">iOS Design / Apple HIG</span>
+              </div>
+              <h3 class="design-title">EgyTech — iOS UI/UX Challenge</h3>
+              <p class="design-desc">
+                Designed an iOS mobile application interface following Apple Human Interface Guidelines, created wireframes and interactive prototypes, and focused on user-centered design and usability.
+              </p>
+              <div class="design-flow-preview">
+                <strong>Project:</strong> EgyTech Zeyad moaz • Sandooq Al Watan Program (Feb 2024 – Jun 2024)
+              </div>
+              <div class="project-tech-stack" style="margin-bottom: 1.25rem;">
+                <span class="tag-pill">Figma</span>
+                <span class="tag-pill">iOS HIG</span>
+                <span class="tag-pill">Wireframing</span>
+                <span class="tag-pill">Interactive Prototype</span>
+              </div>
+              <div class="design-actions">
+                <!-- Clearly marked editable placeholder -->
+                <a href="#" class="btn btn-outline btn-sm" title="Editable Figma link placeholder">
+                  <span>View Figma ↗</span>
+                </a>
+                <a href="#" class="btn btn-outline btn-sm" title="Editable Prototype link placeholder">
+                  <span>View Prototype ↗</span>
+                </a>
+                <button type="button" class="btn btn-primary btn-sm" data-modal-target="egytech">
+                  <span>Case Study</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 04: SAVORÉ -->
+          <div class="design-card">
+            <div class="design-card-media">
+              <img src="assets/images/savore-preview.jpg" alt="SAVORÉ Food Delivery Mobile App" class="design-card-img" loading="lazy" />
+            </div>
+            <div class="design-card-body">
+              <div class="design-meta">
+                <span class="project-num">PROJECT 04</span>
+                <span class="project-category-pill">Food &amp; Dining Mobile App</span>
+              </div>
+              <h3 class="design-title">SAVORÉ — Gourmet Dining App</h3>
+              <p class="design-desc">
+                Premium food ordering mobile application with restaurant discovery, menu browsing, food details, favorites, cart, checkout, order flow, profile, and connected prototype interactions.
+              </p>
+              <div class="design-flow-preview">
+                <strong>Project:</strong> SAVORÉ Food • Discovery &rarr; Menu &rarr; Cart &rarr; Checkout &rarr; Order Tracking
+              </div>
+              <div class="project-tech-stack" style="margin-bottom: 1.25rem;">
+                <span class="tag-pill">Figma</span>
+                <span class="tag-pill">UI/UX</span>
+                <span class="tag-pill">Prototyping</span>
+                <span class="tag-pill">Micro-Interactions</span>
+              </div>
+              <div class="design-actions">
+                <!-- Clearly marked editable placeholder -->
+                <a href="#" class="btn btn-outline btn-sm" title="Editable Figma link placeholder">
+                  <span>View Figma ↗</span>
+                </a>
+                <a href="#" class="btn btn-outline btn-sm" title="Editable Prototype link placeholder">
+                  <span>View Prototype ↗</span>
+                </a>
+                <button type="button" class="btn btn-primary btn-sm" data-modal-target="savore">
+                  <span>Case Study</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 05: SHOPLY -->
+          <div class="design-card">
+            <div class="design-card-media">
+              <img src="assets/images/shoply-preview.jpg" alt="SHOPLY E-commerce iOS UI/UX App" class="design-card-img" loading="lazy" />
+            </div>
+            <div class="design-card-body">
+              <div class="design-meta">
+                <span class="project-num">PROJECT 05</span>
+                <span class="project-category-pill">E-Commerce / iOS UI/UX</span>
+              </div>
+              <h3 class="design-title">SHOPLY — Luxury E-Commerce App</h3>
+              <p class="design-desc">
+                A premium shopping experience with connected screens and complete user flows, featuring modern streetwear and sneaker retail journeys.
+              </p>
+              <div class="design-flow-preview">
+                <strong>Complete Flow:</strong> Onboarding &rarr; Login &rarr; Home &rarr; Search &rarr; Categories &rarr; Product Details &rarr; Cart &rarr; Delivery &rarr; Payment &rarr; Review &rarr; Confirmation &rarr; Tracking
+              </div>
+              <div class="project-tech-stack" style="margin-bottom: 1.25rem;">
+                <span class="tag-pill">Figma Design</span>
+                <span class="tag-pill">Interactive Prototype</span>
+                <span class="tag-pill">Design Systems</span>
+                <span class="tag-pill">iOS UX</span>
+              </div>
+              <div class="design-actions">
+                <a href="https://www.figma.com/design/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <span>Open Figma Design ↗</span>
+                </a>
+                <a href="https://www.figma.com/proto/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <span>Open Prototype ↗</span>
+                </a>
+                <button type="button" class="btn btn-primary btn-sm" data-modal-target="shoply">
+                  <span>Case Study</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Dynamic GitHub Repositories Section
+         =================================================================== -->
+    <section class="section" id="github">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Open Source &amp; Code
+          </span>
+          <h2 class="section-title">GitHub <span class="text-gradient">Repositories</span></h2>
+          <p class="section-description">
+            Live repositories and open-source contributions dynamically synchronized from GitHub.
+          </p>
+        </div>
+
+        <div class="github-header-cta">
+          <a href="https://github.com/ZeyadSalah134" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>View @ZeyadSalah134 on GitHub ↗</span>
+          </a>
+        </div>
+
+        <!-- Dynamic Repos Container -->
+        <div class="github-repos-grid" id="github-repos-container">
+          <!-- Populated dynamically via js/github-api.js with fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Contact Section
+         =================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <span class="section-tag">
+            <span class="section-tag-dot"></span>
+            Get In Touch
+          </span>
+          <h2 class="contact-heading">Let's build something <span class="text-gradient">intelligent</span>.</h2>
+          <p class="contact-subtext">
+            I am currently open to Machine Learning &amp; AI internship opportunities, research collaborations, and freelance technical challenges.
+          </p>
+
+          <!-- Interactive Email Box with Copy Button -->
+          <div class="contact-interactive-box">
+            <span class="contact-email-text" id="contact-email">zeyadsalah134@gmail.com</span>
+            <button type="button" class="btn-copy-email" id="copy-email-btn" aria-label="Copy email address to clipboard">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="contact-actions">
+            <a href="mailto:zeyadsalah134@gmail.com" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Email Me Directly</span>
+            </a>
+          </div>
+
+          <!-- Direct Cool Connection Cards Grid -->
+          <div class="contact-social-grid">
+            <!-- GitHub Hub Card -->
+            <div class="contact-hub-card hub-github">
+              <div>
+                <div class="hub-card-header">
+                  <div class="hub-icon-bubble">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="hub-card-title">GitHub Profile</h3>
+                    <p class="hub-card-subtitle">@ZeyadSalah134</p>
+                  </div>
+                </div>
+                <p class="hub-card-desc" style="margin-top: 1rem;">
+                  Explore open-source machine learning pipelines, Streamlit apps, Jupyter notebooks, and algorithm implementations.
+                </p>
+              </div>
+              <a href="https://github.com/ZeyadSalah134" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: rgba(0, 242, 254, 0.4); color: var(--accent-cyan);">
+                <span>Explore GitHub: @ZeyadSalah134 ↗</span>
+              </a>
+            </div>
+
+            <!-- LinkedIn Hub Card -->
+            <div class="contact-hub-card hub-linkedin">
+              <div>
+                <div class="hub-card-header">
+                  <div class="hub-icon-bubble">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="hub-card-title">LinkedIn Network</h3>
+                    <p class="hub-card-subtitle">Zeyad Salah Elshanab</p>
+                  </div>
+                </div>
+                <p class="hub-card-desc" style="margin-top: 1rem;">
+                  Connect for AI/ML internship opportunities, research discussions, collaborative engineering, and networking.
+                </p>
+              </div>
+              <a href="https://www.linkedin.com/in/zeyad-salah-elshanab?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: rgba(10, 102, 194, 0.5); color: #38bdf8;">
+                <span>Connect on LinkedIn ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       Footer
+       =================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Zeyad Salah</h3>
+          <p>AI / ML / Computer Science</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="https://github.com/ZeyadSalah134" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/zeyad-salah-elshanab?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mailto:zeyadsalah134@gmail.com">Email</a></li>
+          <li><a href="assets/docs/Zeyad_Salah_CV.pdf" download="Zeyad_Salah_CV.pdf">Download CV</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Zeyad Salah. Built with HTML, CSS &amp; JavaScript.</p>
+        <p>Production Ready &bull; GitHub Pages Hosted</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       Project Case Study Modal
+       =================================================================== -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-body" id="modal-content-area">
+        <!-- Injected dynamically via js/modals.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Interactive Toast Notification
+       =================================================================== -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+    <span class="toast-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    </span>
+    <span id="toast-text">Email copied to clipboard!</span>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ===================================================================
+       Scripts
+       =================================================================== -->
+  <script src="js/neural-canvas.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/github-api.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
