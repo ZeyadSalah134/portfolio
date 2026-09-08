@@ -100,16 +100,21 @@ Replace the images in `assets/images/`:
 - `savore-preview.jpg`
 - `shoply-preview.jpg`
 
-### 4. How to Update Figma Links & Project URLs
-In `index.html` and `js/modals.js`:
-- Search for `data-modal-target="egytech"` or `data-modal-target="savore"`
-- Replace the placeholder `href="#"` links with your live Figma file or prototype links:
-  ```html
-  <a href="https://www.figma.com/design/YOUR_FIGMA_LINK" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-    <span>View Figma ↗</span>
-  </a>
-  ```
-- In `js/modals.js`, update the corresponding `url:` fields in the `projectData` object.
+### 4. Figma Design & Prototype Links
+Each Figma project card and modal features two dedicated external links:
+- **View Design** (`target="_blank" rel="noopener noreferrer"`): Opens the full workspace design file in Figma.
+- **View Prototype** (`target="_blank" rel="noopener noreferrer"`): Opens the interactive, clickable presentation prototype in Figma.
+
+Active mappings:
+- **EgyTech**:
+  - Design: `https://www.figma.com/design/Vt4vxTnAD4ZmSURWwUTK06/EgyTech-Zeyad-moaz-?t=h6ZflwpaICDlKVxP-1`
+  - Prototype: `https://www.figma.com/proto/Vt4vxTnAD4ZmSURWwUTK06/EgyTech-Zeyad-moaz-?node-id=0-1&t=04BneSzBdaPXMUWJ-1`
+- **SHOPLY**:
+  - Design: `https://www.figma.com/design/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1`
+  - Prototype: `https://www.figma.com/proto/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=2J3Lf6gjLGsiY1oC-1`
+- **SAVORÉ**:
+  - Design: `https://www.figma.com/design/5Dx2YqMOXwqxbo3Xk7y4Se/SAVOR%C3%89-Food-?node-id=3-2&t=gH2c3v5UYi3RHDg7-1`
+  - Prototype: `https://www.figma.com/proto/5Dx2YqMOXwqxbo3Xk7y4Se/SAVOR%C3%89-Food-?node-id=3-2&t=Hva6Bca8JRBKjwkc-1`
 
 ---
 

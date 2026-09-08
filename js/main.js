@@ -187,4 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(el);
     });
   }
+
+  // -----------------------------------------------------------------
+  // 6. Project & Modal Action Links Event Propagation Guard
+  // -----------------------------------------------------------------
+  document.addEventListener('click', (e) => {
+    const actionLink = e.target.closest('.design-actions a, .modal-footer-actions a');
+    if (actionLink) {
+      e.stopPropagation();
+    }
+  });
 });

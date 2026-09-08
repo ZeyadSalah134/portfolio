@@ -78,8 +78,8 @@ const projectData = {
       "Light & Dark Mode Variants: Cohesive design tokens optimized for OLED screens."
     ],
     links: [
-      { text: "View Figma Design", url: "#", primary: true, note: "Project: EgyTech Zeyad moaz (Placeholder link)" },
-      { text: "View Prototype", url: "#", primary: false, note: "Interactive Prototype" }
+      { text: "View Design", url: "https://www.figma.com/design/Vt4vxTnAD4ZmSURWwUTK06/EgyTech-Zeyad-moaz-?t=h6ZflwpaICDlKVxP-1", primary: true },
+      { text: "View Prototype", url: "https://www.figma.com/proto/Vt4vxTnAD4ZmSURWwUTK06/EgyTech-Zeyad-moaz-?node-id=0-1&t=04BneSzBdaPXMUWJ-1", primary: false }
     ]
   },
   savore: {
@@ -103,8 +103,8 @@ const projectData = {
       "Order Tracking: Live progress status with courier ETA telemetry."
     ],
     links: [
-      { text: "View Figma Design", url: "#", primary: true, note: "Project: SAVORÉ Food (Placeholder link)" },
-      { text: "View Prototype", url: "#", primary: false, note: "Interactive Prototype" }
+      { text: "View Design", url: "https://www.figma.com/design/5Dx2YqMOXwqxbo3Xk7y4Se/SAVOR%C3%89-Food-?node-id=3-2&t=gH2c3v5UYi3RHDg7-1", primary: true },
+      { text: "View Prototype", url: "https://www.figma.com/proto/5Dx2YqMOXwqxbo3Xk7y4Se/SAVOR%C3%89-Food-?node-id=3-2&t=Hva6Bca8JRBKjwkc-1", primary: false }
     ]
   },
   shoply: {
@@ -127,8 +127,8 @@ const projectData = {
       "Interactive Figma Prototype: Full clickable prototype available directly via Figma."
     ],
     links: [
-      { text: "Open Figma Design", url: "https://www.figma.com/design/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1", primary: true },
-      { text: "Open Prototype", url: "https://www.figma.com/proto/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1", primary: false }
+      { text: "View Design", url: "https://www.figma.com/design/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1", primary: true },
+      { text: "View Prototype", url: "https://www.figma.com/proto/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=2J3Lf6gjLGsiY1oC-1", primary: false }
     ]
   }
 };
@@ -151,7 +151,8 @@ const projectData = {
         const isPlaceholder = l.url === '#';
         const targetAttr = isPlaceholder ? '' : 'target="_blank" rel="noopener noreferrer"';
         const tooltip = isPlaceholder ? ' title="Editable placeholder link - add your URL"' : '';
-        return `<a href="${l.url}" ${targetAttr}${tooltip} class="${btnClass}">${l.text} ↗</a>`;
+        const icon = l.text.toLowerCase().includes('prototype') ? '▶' : '↗';
+        return `<a href="${l.url}" ${targetAttr}${tooltip} class="${btnClass}">${l.text} ${icon}</a>`;
       }).join('');
     }
 
