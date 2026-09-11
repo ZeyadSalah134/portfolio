@@ -10,26 +10,26 @@
    ------------------------------------------------------------------- */
 :root {
   /* ================= LIGHT MODE (Default) ================= */
-  --color-primary: #3368A0;          /* Primary buttons, active nav, main accents */
-  --color-secondary: #66A3BF;        /* Secondary accents, hover states, supporting UI */
-  --color-soft-accent: #C8DFDB;      /* Soft backgrounds, section variations, highlight areas */
-  --color-main-bg: #F7F9F8;          /* Main page background */
+  --color-primary: #659287;          /* Primary buttons, active nav, main accents */
+  --color-secondary: #88BDA4;        /* Secondary accents, hover states, supporting UI */
+  --color-soft-accent: #B1D3B9;      /* Soft backgrounds, section variations, highlight areas */
+  --color-main-bg: #E6F2DD;          /* Main page background */
   --color-card-bg: #FFFFFF;          /* Cards, elevated surfaces */
-  --color-card-subtle: #F1F5F4;      /* Nested card surface / pill background */
-  --color-text-primary: #111111;     /* Primary text */
-  --color-text-secondary: #606060;   /* Secondary text */
-  --color-border: rgba(17, 17, 17, 0.08);
-  --color-border-subtle: rgba(17, 17, 17, 0.05);
+  --color-card-subtle: #F2F8EE;      /* Nested card surface / pill background */
+  --color-text-primary: #12221B;     /* Primary text */
+  --color-text-secondary: #4A6359;   /* Secondary text */
+  --color-border: rgba(18, 34, 27, 0.10);
+  --color-border-subtle: rgba(18, 34, 27, 0.05);
 
   /* Navbar */
-  --nav-bg: rgba(247, 249, 248, 0.85);
-  --nav-border: rgba(17, 17, 17, 0.08);
+  --nav-bg: rgba(230, 242, 221, 0.88);
+  --nav-border: rgba(18, 34, 27, 0.09);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(17, 17, 17, 0.04);
-  --shadow-card: 0 8px 24px rgba(17, 17, 17, 0.07);
-  --shadow-card-hover: 0 14px 35px rgba(17, 17, 17, 0.10);
-  --shadow-nav: 0 4px 20px rgba(17, 17, 17, 0.05);
+  --shadow-sm: 0 2px 8px rgba(18, 34, 27, 0.04);
+  --shadow-card: 0 8px 24px rgba(18, 34, 27, 0.07);
+  --shadow-card-hover: 0 14px 35px rgba(18, 34, 27, 0.12);
+  --shadow-nav: 0 4px 20px rgba(18, 34, 27, 0.06);
 
   /* Typography */
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -55,26 +55,26 @@
 
 /* ================= DARK MODE ================= */
 [data-theme="dark"] {
-  --color-primary: #A3B087;          /* Primary buttons, active states, highlights, accents */
-  --color-secondary: #BFC4C5;        /* Secondary accents, hover states */
-  --color-soft-accent: #435663;      /* Secondary surface, section variations */
-  --color-main-bg: #313647;          /* Primary dark background */
-  --color-card-bg: #435663;          /* Cards, navigation, interactive surfaces */
-  --color-card-subtle: rgba(255, 255, 255, 0.05);
-  --color-text-primary: #F4F5F2;     /* Primary text */
-  --color-text-secondary: #BFC4C5;   /* Secondary text */
-  --color-border: rgba(255, 255, 255, 0.09);
-  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-primary: #2F2FE4;          /* Vibrant cobalt primary buttons, active states, accents */
+  --color-secondary: #5151EE;        /* Secondary accents, hover states */
+  --color-soft-accent: #162E93;      /* Deep royal blue accent / section variations */
+  --color-main-bg: #080616;          /* Deep midnight dark background */
+  --color-card-bg: #1A1953;          /* Elevated indigo card & surface */
+  --color-card-subtle: rgba(255, 255, 255, 0.07);
+  --color-text-primary: #F4F6FF;     /* Primary text */
+  --color-text-secondary: #B4B9DB;   /* Secondary text */
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
 
   /* Navbar */
-  --nav-bg: rgba(49, 54, 71, 0.88);
-  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(8, 6, 22, 0.88);
+  --nav-border: rgba(255, 255, 255, 0.10);
 
   /* Dark mode soft layered shadow without heavy black */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.18);
-  --shadow-card-hover: 0 14px 35px rgba(0, 0, 0, 0.28);
-  --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-card-hover: 0 14px 35px rgba(47, 47, 228, 0.28);
+  --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* -------------------------------------------------------------------
@@ -172,10 +172,10 @@ img {
 }
 
 .section-alt {
-  background-color: rgba(200, 223, 219, 0.14);
+  background-color: rgba(177, 211, 185, 0.22);
 }
 [data-theme="dark"] .section-alt {
-  background-color: rgba(67, 86, 99, 0.25);
+  background-color: rgba(22, 46, 147, 0.18);
 }
 
 .section-header {
@@ -271,7 +271,7 @@ img {
   transition: transform 0.2s ease;
 }
 [data-theme="dark"] .brand-badge {
-  color: #313647;
+  color: #F4F6FF;
 }
 .nav-brand:hover .brand-badge {
   transform: scale(1.05);
@@ -449,11 +449,11 @@ img {
   background-color: var(--color-primary);
   color: #FFFFFF;
   border: 1px solid var(--color-primary);
-  box-shadow: 0 4px 14px rgba(51, 104, 160, 0.25);
+  box-shadow: 0 4px 14px rgba(101, 146, 135, 0.28);
 }
 [data-theme="dark"] .btn-primary {
-  color: #313647;
-  box-shadow: 0 4px 14px rgba(163, 176, 135, 0.22);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(47, 47, 228, 0.4);
 }
 
 .btn-primary:hover {
@@ -461,13 +461,13 @@ img {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(51, 104, 160, 0.32);
+  box-shadow: 0 6px 20px rgba(101, 146, 135, 0.38);
 }
 [data-theme="dark"] .btn-primary:hover {
-  background-color: #BAC79E;
-  border-color: #BAC79E;
-  color: #313647;
-  box-shadow: 0 6px 20px rgba(163, 176, 135, 0.3);
+  background-color: #5151EE;
+  border-color: #5151EE;
+  color: #FFFFFF;
+  box-shadow: 0 6px 22px rgba(47, 47, 228, 0.55);
 }
 
 .btn-outline {
@@ -936,7 +936,7 @@ img {
   color: #FFFFFF;
 }
 [data-theme="dark"] .service-card:hover .service-icon-box {
-  color: #313647;
+  color: #FFFFFF;
 }
 
 .service-title {

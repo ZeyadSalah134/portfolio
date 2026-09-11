@@ -15,19 +15,20 @@ Built purely with modern **HTML5**, **Vanilla CSS**, and **Vanilla JavaScript**.
 
 - **Dual-Theme Engine (Light & Dark)**:
   - **Light Mode Palette**:
-    - Primary: `#3368A0`
-    - Secondary: `#66A3BF`
-    - Soft Accent: `#C8DFDB`
-    - Main Background: `#F7F9F8`
+    - Primary: `#659287`
+    - Secondary: `#88BDA4`
+    - Soft Accent: `#B1D3B9`
+    - Main Background: `#E6F2DD`
     - Cards: `#FFFFFF`
-    - Primary Text: `#111111`
-    - Secondary Text: `#606060`
+    - Primary Text: `#12221B`
+    - Secondary Text: `#4A6359`
   - **Dark Mode Palette**:
-    - Primary Dark Background: `#313647`
-    - Secondary Surface: `#435663`
-    - Accent: `#A3B087`
-    - Primary Text: `#F4F5F2`
-    - Secondary Text: `#BFC4C5`
+    - Primary Dark Background: `#080616`
+    - Secondary Surface / Cards: `#1A1953`
+    - Accent: `#2F2FE4`
+    - Secondary Accent / Variation: `#162E93`
+    - Primary Text: `#F4F6FF`
+    - Secondary Text: `#B4B9DB`
   - Instant theme switching without reload, persisted in `localStorage`, honoring system preferences.
 - **Hero Section with Typewriter Effect**:
   - Reserved width to prevent layout shift.
