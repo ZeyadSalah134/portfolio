@@ -1,56 +1,121 @@
 /**
  * main.js
- * Core interactions, navigation spy, mobile drawer, copy-to-clipboard, skill filtering
+ * Core interactivity:
+ * - Layout-shift free Typewriter engine with reduced-motion fallback
+ * - Sticky navigation & active scroll spy
+ * - Mobile menu drawer
+ * - Testimonials carousel (arrows, dots, touch swipe)
+ * - Copy email to clipboard + toast alert
+ * - IntersectionObserver scroll reveal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // -----------------------------------------------------------------
-  // 1. Sticky Navigation & Scroll Spy
+  // 1. Typewriter Animation Engine
+  // Sequence:
+  // 1. AI/ML Engineer in Progress
+  // 2. UI/UX Designer
+  // 3. Machine Learning Developer
+  // 4. Generative AI Builder
+  // -----------------------------------------------------------------
+  const typewriterEl = document.getElementById('typewriter-role');
+  const roles = [
+    'AI/ML Engineer in Progress',
+    'UI/UX Designer',
+    'Machine Learning Developer',
+    'Generative AI Builder'
+  ];
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (typewriterEl) {
+    if (prefersReducedMotion) {
+      typewriterEl.textContent = roles[0];
+    } else {
+      let roleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typeSpeed = 80;
+      const deleteSpeed = 40;
+      const pauseDuration = 1900;
+
+      function typeLoop() {
+        const currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+          charIndex--;
+          typewriterEl.textContent = currentRole.substring(0, charIndex);
+        } else {
+          charIndex++;
+          typewriterEl.textContent = currentRole.substring(0, charIndex);
+        }
+
+        let delay = isDeleting ? deleteSpeed : typeSpeed;
+
+        if (!isDeleting && charIndex === currentRole.length) {
+          delay = pauseDuration;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          delay = 400;
+        }
+
+        setTimeout(typeLoop, delay);
+      }
+
+      typeLoop();
+    }
+  }
+
+  // -----------------------------------------------------------------
+  // 2. Sticky Navbar & Scroll Spy
   // -----------------------------------------------------------------
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
   const backToTopBtn = document.getElementById('back-to-top');
 
-  function handleScroll() {
+  function onScroll() {
     const scrollY = window.scrollY;
 
-    // Navbar style on scroll
-    if (scrollY > 40) {
+    if (scrollY > 30) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Back to top button visibility
-    if (scrollY > 500) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
+    if (backToTopBtn) {
+      if (scrollY > 450) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
     }
 
-    // Scroll spy: highlight active section in navbar
-    let currentSectionId = '';
+    // Scroll spy
+    let currentId = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
+      const top = section.offsetTop - 110;
+      const height = section.offsetHeight;
+      if (scrollY >= top && scrollY < top + height) {
+        currentId = section.getAttribute('id');
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSectionId}`) {
-        link.classList.add('active');
-      }
-    });
+    if (currentId) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  // Back to top smooth scroll
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -58,143 +123,153 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -----------------------------------------------------------------
-  // 2. Mobile Navigation Drawer
+  // 3. Mobile Navigation Drawer
   // -----------------------------------------------------------------
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
 
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
       navToggle.classList.toggle('open');
-      navMenu.classList.toggle('open');
-      document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close mobile menu when clicking any nav link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        navToggle.classList.remove('open');
         navMenu.classList.remove('open');
-        document.body.style.overflow = '';
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
   // -----------------------------------------------------------------
-  // 3. Interactive Skills Category Filter
+  // 4. Testimonials Carousel
   // -----------------------------------------------------------------
-  const skillTabs = document.querySelectorAll('.skill-tab-btn');
-  const skillCards = document.querySelectorAll('.skill-card');
+  const track = document.getElementById('testimonial-track');
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const dots = document.querySelectorAll('.carousel-dot');
 
-  skillTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      skillTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+  if (track && slides.length > 0) {
+    let currentIndex = 0;
+    const totalSlides = slides.length;
 
-      const filter = tab.getAttribute('data-filter');
+    function goToSlide(index) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      currentIndex = index;
 
-      skillCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 20);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(10px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 200);
-        }
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
       });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goToSlide(i));
     });
-  });
+
+    // Touch Swipe for Mobile
+    let startX = 0;
+    let endX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      startX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const threshold = 45;
+      if (startX - endX > threshold) {
+        goToSlide(currentIndex + 1);
+      } else if (endX - startX > threshold) {
+        goToSlide(currentIndex - 1);
+      }
+    }
+  }
 
   // -----------------------------------------------------------------
-  // 4. Copy Email & Toast Notification
+  // 5. Copy Email & Toast
+  // Target email: ZeyadElshanab@gmail.com
   // -----------------------------------------------------------------
-  const copyEmailBtn = document.getElementById('copy-email-btn');
+  const copyBtn = document.getElementById('copy-email-btn');
   const toast = document.getElementById('toast-notification');
   const toastText = document.getElementById('toast-text');
   let toastTimer;
 
-  function showToast(message) {
+  function showToast(msg) {
     if (!toast) return;
-    toastText.textContent = message;
+    toastText.textContent = msg;
     toast.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toast.classList.remove('show');
-    }, 3200);
+    }, 3000);
   }
 
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', () => {
-      const email = 'zeyadsalah134@gmail.com';
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = 'ZeyadElshanab@gmail.com';
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email).then(() => {
-          showToast('Email copied to clipboard: ' + email);
+          showToast('Copied: ' + email);
         }).catch(() => {
-          fallbackCopyText(email);
+          fallbackCopy(email);
         });
       } else {
-        fallbackCopyText(email);
+        fallbackCopy(email);
       }
     });
   }
 
-  function fallbackCopyText(text) {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
     try {
       document.execCommand('copy');
-      showToast('Email copied to clipboard: ' + text);
-    } catch (err) {
-      showToast('Contact: ' + text);
+      showToast('Copied: ' + text);
+    } catch (_) {
+      showToast('Email: ' + text);
     }
-    document.body.removeChild(textArea);
+    document.body.removeChild(ta);
   }
 
   // -----------------------------------------------------------------
-  // 5. Scroll Reveal Observer for Cards
+  // 6. Scroll Reveal Observer
   // -----------------------------------------------------------------
-  const revealElements = document.querySelectorAll(
-    '.timeline-item, .featured-project-card, .design-card, .cert-card, .info-card'
-  );
-
-  if ('IntersectionObserver' in window) {
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('revealed');
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-      observer.observe(el);
-    });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('revealed'));
   }
-
-  // -----------------------------------------------------------------
-  // 6. Project & Modal Action Links Event Propagation Guard
-  // -----------------------------------------------------------------
-  document.addEventListener('click', (e) => {
-    const actionLink = e.target.closest('.design-actions a, .modal-footer-actions a');
-    if (actionLink) {
-      e.stopPropagation();
-    }
-  });
 });

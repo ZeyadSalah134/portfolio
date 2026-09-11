@@ -1,29 +1,52 @@
-# Zeyad Salah — AI & Machine Learning Engineer Portfolio
+# Zeyad Salah — AI/ML Engineer in Progress & UI/UX Designer Portfolio
 
-A premium, production-grade personal portfolio website for **Zeyad Salah El Sayed Ali Elshanab**, Computer Science (AI) student specializing in Machine Learning, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and practical AI systems.
+A premium, modern, responsive, and interactive personal portfolio for **Zeyad Salah**, Computer Science (AI) student at Zagazig National University specializing in:
+- Artificial Intelligence & Machine Learning
+- Generative AI & Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- AI Product Prototyping
+- UI/UX & Interaction Design (Apple HIG)
 
-Built purely with modern **HTML5**, **CSS3**, and modular **Vanilla JavaScript (ES6+)**. Designed to be 100% static and ready for direct deployment to **GitHub Pages**.
+Built purely with modern **HTML5**, **Vanilla CSS**, and **Vanilla JavaScript**. 100% static, performant, accessible, and ready for deployment to **GitHub Pages**.
 
 ---
 
-## 🌟 Features & Highlights
+## 🌟 Key Highlights & Design System
 
-- **Dark High-Tech Visual Identity**: Near-black/navy backgrounds (`#07090e`, `#0c111c`), white typography, glassmorphism cards, glowing electric cyan borders, and ambient neural network canvas.
-- **Hero Showcase**: Prominent profile photo with glowing cybernetic frame and floating tech chips (`CS (AI) • Class of 2028`, `LLMs & RAG Systems`).
-- **Interactive Sticky Navigation & Mobile Drawer**: Smooth scroll spy, active section indicator, CV download button, and responsive hamburger menu.
-- **Experience Timeline**: Structured chronology of Machine Learning and LLM internships (Uneeq Interns, Tips Hindawi).
-- **Interactive Skills Section**: Filterable by category (*AI/ML*, *Generative AI*, *Programming*, *Tools & Practices*) with animated proficiency meters without fake percentages.
-- **Verified Certifications**: Credential cards for NVIDIA DLI (Generative AI, LLM Prompt Engineering) and Google AI certifications.
-- **Core AI/ML Projects Showcase**:
-  - **REVORA — Car Horsepower Prediction**: Feature mini-cards (*Predictor*, *Performance DNA*, *Power Battle*, *Model Insights*), visual interactive ML pipeline flow (*Dataset &rarr; Cleaning &rarr; Feature Engineering &rarr; Target Encoding &rarr; Training &rarr; Comparison &rarr; Joblib &rarr; Streamlit*), live demo, and GitHub links.
-  - **AI / ML Project**: Video demonstration preview card with direct play trigger linked to Google Drive.
-- **UI/UX & Product Design Projects**:
-  - **EgyTech**: iOS Design Challenge adhering to Apple Human Interface Guidelines.
-  - **SAVORÉ**: Luxury food delivery and restaurant discovery app flow.
-  - **SHOPLY**: Complete 15-screen connected e-commerce user journey in Figma.
-- **Dynamic GitHub Repositories**: Synchronizes live repositories from `@ZeyadSalah134` via GitHub public API with graceful fallback.
-- **Interactive Case Study Modals**: Fullscreen modals for in-depth project overviews, pipelines, and direct links.
-- **Interactive Contact**: One-click "Copy Email" with animated toast notification and direct mailto button.
+- **Dual-Theme Engine (Light & Dark)**:
+  - **Light Mode Palette**:
+    - Primary: `#3368A0`
+    - Secondary: `#66A3BF`
+    - Soft Accent: `#C8DFDB`
+    - Main Background: `#F7F9F8`
+    - Cards: `#FFFFFF`
+    - Primary Text: `#111111`
+    - Secondary Text: `#606060`
+  - **Dark Mode Palette**:
+    - Primary Dark Background: `#313647`
+    - Secondary Surface: `#435663`
+    - Accent: `#A3B087`
+    - Primary Text: `#F4F5F2`
+    - Secondary Text: `#BFC4C5`
+  - Instant theme switching without reload, persisted in `localStorage`, honoring system preferences.
+- **Hero Section with Typewriter Effect**:
+  - Reserved width to prevent layout shift.
+  - Loops continuously: *AI/ML Engineer in Progress*, *UI/UX Designer*, *Machine Learning Developer*, *Generative AI Builder*.
+  - Displays user's actual portrait photo on desktop (right side) and cleanly underneath on mobile.
+  - Accessible with graceful fallback under `prefers-reduced-motion`.
+- **9 Streamlined Sections**:
+  1. **Home**: Hero introduction, typewriter headline, call-to-actions, and social links.
+  2. **About**: In-depth philosophy on turning working ideas into running systems, academic background (3.97 GPA).
+  3. **Experience**: Vertical timeline with Uneeq Interns & Tips Hindawi.
+  4. **Services**: What I Build (AI & ML solutions, LLMs, AI Product Prototyping, UI/UX, Product Design).
+  5. **Skills**: Categorized into Programming, AI/ML, ML/Data Stack, AI Engineering, Development, and Design.
+  6. **Projects**:
+     - **AI/ML**: REVORA (Horsepower prediction from car specs, Streamlit app).
+     - **UI/UX & Product Design**: EgyTech, SHOPLY, SAVORÉ (with Figma designs and prototypes).
+     - Empty, pre-styled image containers ready for asset insertion without broken glyphs.
+  7. **Testimonials**: Accessible carousel with touch swipe, previous/next controls, and authentic peer/mentor reviews.
+  8. **Get In Touch**: Clickable email, one-click copy button with toast notification, GitHub, and LinkedIn links.
+  9. **Footer**: Quick links, official contact info, and copyright.
 
 ---
 
@@ -31,132 +54,40 @@ Built purely with modern **HTML5**, **CSS3**, and modular **Vanilla JavaScript (
 
 ```
 MyPorto/
-├── index.html                   # Semantic HTML5 architecture & SEO/OG metadata
-├── README.md                    # Documentation & deployment guide
+├── index.html                   # Semantic HTML5 architecture & SEO metadata
+├── README.md                    # Project overview & documentation
+├── LINK.md                      # Deployment links & instructions
 ├── css/
-│   └── style.css                # Design system tokens, glowing effects & responsive grid
+│   └── style.css                # Design system tokens, light/dark themes, responsive rules
 ├── js/
-│   ├── main.js                  # Navigation scroll spy, copy toast, skill filter
-│   ├── neural-canvas.js         # Interactive ambient AI particle constellation
-│   ├── github-api.js            # Dynamic GitHub repo loader with fallback
-│   └── modals.js                # Fullscreen project modal & case study viewer
+│   ├── theme.js                 # Theme engine with localStorage persistence
+│   └── main.js                  # Typewriter engine, scroll spy, carousel, toast
 └── assets/
     ├── images/
-    │   ├── zeyad-photo.jpg      # Profile photo
-    │   ├── favicon.svg          # Neural node SVG favicon
-    │   ├── revora-preview.jpg   # REVORA project preview
-    │   ├── ml-preview.jpg       # ML video project preview
-    │   ├── egytech-preview.jpg  # EgyTech design preview
-    │   ├── savore-preview.jpg   # SAVORÉ food app preview
-    │   └── shoply-preview.jpg   # SHOPLY e-commerce preview
+    │   ├── zeyad-profile.jpg    # Portrait photo
+    │   └── favicon.svg          # Portfolio favicon
     └── docs/
         └── Zeyad_Salah_CV.pdf   # Downloadable CV
 ```
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Running Locally
 
-You do not need to install Node.js or any build tools. You can run the website using any static server:
+You do not need Node.js or heavy dependencies. You can run the website with any lightweight HTTP server:
 
-### Option 1: Python Built-in Server (Recommended)
-Open a terminal in the project directory and run:
-```bash
-python -m http.server 8000
-```
-Then open your browser and navigate to:
-```
-http://localhost:8000
+```powershell
+python -m http.server 3000
 ```
 
-### Option 2: VS Code Live Server
-1. Open the project folder in VS Code.
-2. Install the **Live Server** extension.
-3. Right-click `index.html` and select **"Open with Live Server"**.
+Open `http://localhost:3000` in your web browser.
 
 ---
 
-## ⚙️ Customization Guide
+## 📬 Contact Information
 
-### 1. How to Replace Your Profile Photo
-Replace the image located at:
-```
-assets/images/zeyad-photo.jpg
-```
-Keep the filename `zeyad-photo.jpg` (or update the `src` attribute in `index.html` under `<img src="assets/images/zeyad-photo.jpg" ... />`).
-
-### 2. How to Update or Replace Your CV
-Replace the PDF located at:
-```
-assets/docs/Zeyad_Salah_CV.pdf
-```
-Ensure the filename remains `Zeyad_Salah_CV.pdf` so all download buttons automatically link to your updated document.
-
-### 3. How to Update Project Images
-Replace the images in `assets/images/`:
-- `revora-preview.jpg`
-- `ml-preview.jpg`
-- `egytech-preview.jpg`
-- `savore-preview.jpg`
-- `shoply-preview.jpg`
-
-### 4. Figma Design & Prototype Links
-Each Figma project card and modal features two dedicated external links:
-- **View Design** (`target="_blank" rel="noopener noreferrer"`): Opens the full workspace design file in Figma.
-- **View Prototype** (`target="_blank" rel="noopener noreferrer"`): Opens the interactive, clickable presentation prototype in Figma.
-
-Active mappings:
-- **EgyTech**:
-  - Design: `https://www.figma.com/design/Vt4vxTnAD4ZmSURWwUTK06/EgyTech-Zeyad-moaz-?t=h6ZflwpaICDlKVxP-1`
-  - Prototype: `https://www.figma.com/proto/Vt4vxTnAD4ZmSURWwUTK06/EgyTech-Zeyad-moaz-?node-id=0-1&t=04BneSzBdaPXMUWJ-1`
-- **SHOPLY**:
-  - Design: `https://www.figma.com/design/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1`
-  - Prototype: `https://www.figma.com/proto/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=2J3Lf6gjLGsiY1oC-1`
-- **SAVORÉ**:
-  - Design: `https://www.figma.com/design/5Dx2YqMOXwqxbo3Xk7y4Se/SAVOR%C3%89-Food-?node-id=3-2&t=gH2c3v5UYi3RHDg7-1`
-  - Prototype: `https://www.figma.com/proto/5Dx2YqMOXwqxbo3Xk7y4Se/SAVOR%C3%89-Food-?node-id=3-2&t=Hva6Bca8JRBKjwkc-1`
-
----
-
-## 🌐 How to Deploy to GitHub Pages (Step-by-Step)
-
-Because this website uses 100% relative paths (`./assets/...`, `css/style.css`, `js/...`), it is instantly compatible with GitHub Pages.
-
-### Step 1: Initialize Git and Commit
-In the project directory, run:
-```bash
-git init
-git add .
-git commit -m "feat: initial release of Zeyad Salah AI portfolio"
-```
-
-### Step 2: Create a GitHub Repository
-1. Go to [GitHub New Repository](https://github.com/new).
-2. Name it `portfolio` (or `ZeyadSalah134.github.io` for your root domain).
-3. Set visibility to **Public**.
-4. Leave "Add a README" unchecked.
-5. Click **Create repository**.
-
-### Step 3: Push to GitHub
-```bash
-git branch -M main
-git remote add origin https://github.com/ZeyadSalah134/portfolio.git
-git push -u origin main
-```
-
-### Step 4: Enable GitHub Pages
-1. Go to your repository on GitHub.
-2. Click **Settings** (top navigation).
-3. In the left sidebar, click **Pages**.
-4. Under **Branch**, select `main` and folder `/ (root)`.
-5. Click **Save**.
-6. After 1–2 minutes, your website will be live at:
-   ```
-   https://ZeyadSalah134.github.io/portfolio/
-   ```
-
----
-
-## 📄 License & Attribution
-
-&copy; 2026 Zeyad Salah. Designed and built with HTML5, CSS3, and JavaScript. All rights reserved.
+- **Email**: [ZeyadElshanab@gmail.com](mailto:ZeyadElshanab@gmail.com)
+- **LinkedIn**: [linkedin.com/in/zeyad-salah-elshanab](https://eg.linkedin.com/in/zeyad-salah-elshanab)
+- **GitHub**: [github.com/ZeyadSalah134](https://github.com/ZeyadSalah134)
+- **REVORA GitHub**: [github.com/ZeyadSalah134/FinalNtiSpeedProject](https://github.com/ZeyadSalah134/FinalNtiSpeedProject)
+- **REVORA Live App**: [revoraproject.streamlit.app](https://revoraproject.streamlit.app)
