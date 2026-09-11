@@ -42,7 +42,7 @@ Built purely with modern **HTML5**, **Vanilla CSS**, and **Vanilla JavaScript**.
   5. **Skills**: Categorized into Programming, AI/ML, ML/Data Stack, AI Engineering, Development, and Design.
   6. **Projects**:
      - **AI/ML**: REVORA (Horsepower prediction from car specs, Streamlit app).
-     - **UI/UX & Product Design**: EgyTech, SHOPLY, SAVORÉ (with Figma designs and prototypes).
+     - **UI/UX & Product Design**: EgyTech, SHOPLY, SAVORÉ, AUTOVA (with Figma designs and prototypes).
      - Empty, pre-styled image containers ready for asset insertion without broken glyphs.
   7. **Testimonials**: Accessible carousel with touch swipe, previous/next controls, and authentic peer/mentor reviews.
   8. **Get In Touch**: Clickable email, one-click copy button with toast notification, GitHub, and LinkedIn links.
