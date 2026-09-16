@@ -130,6 +130,31 @@ const projectData = {
       { text: "View Design", url: "https://www.figma.com/design/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=e80c1N1tWgir27M2-1", primary: true },
       { text: "View Prototype", url: "https://www.figma.com/proto/szVBQj2Dp32eb8cFZEpN2p/SHOPLY?node-id=0-1&t=2J3Lf6gjLGsiY1oC-1", primary: false }
     ]
+  },
+  autova: {
+    badge: "PROJECT 06 • UI/UX & PRODUCT DESIGN",
+    title: "AUTOVA — Automotive Digital Experience",
+    category: "Automotive / iOS UI/UX",
+    image: "assets/images/autova-preview.jpg",
+    description: "Modern automotive digital product experience crafted in Figma with interactive car discovery, vehicle specs, 360 exterior viewer, and connected user journeys.",
+    overview: "AUTOVA reimagines how car buyers explore and interact with modern vehicles on mobile. Featuring high-definition vehicle showcases, interactive 360 viewing, real-time performance telemetry, and streamlined test drive bookings.",
+    pipeline: [
+      "Automotive Market Research & User Need Formulation",
+      "Vehicle Discovery Flow & Information Architecture",
+      "Apple HIG Component Library & Design System",
+      "Interactive 360 Exterior & Telemetry Prototyping",
+      "Test Drive Booking & Digital Wallet UI Flows"
+    ],
+    features: [
+      "Vehicle Discovery & Comparison: Side-by-side vehicle specs, horsepower, torque, and pricing telemetry.",
+      "360 Interactive Viewer: Fluid multi-angle car inspection flows.",
+      "Performance Telemetry: Live BHP, G-Force, and battery/fuel analytics.",
+      "Connected Figma Prototype: Complete interactive journey from vehicle search to test drive reservation."
+    ],
+    links: [
+      { text: "View Design", url: "https://www.figma.com/design/QvuegUrxYe1jTORiukATGw/AUTOVA?node-id=4-23&t=JbwLE39eaIef4Bt2-1", primary: true },
+      { text: "View Prototype", url: "https://www.figma.com/proto/QvuegUrxYe1jTORiukATGw/AUTOVA?node-id=4-23&t=JbwLE39eaIef4Bt2-1", primary: false }
+    ]
   }
 };
 
